@@ -1,0 +1,20 @@
+{
+	"employees": [
+		{
+			"id": 100,
+			"name": "John Smith",
+			"code": "josm",
+			"phone": "111111",
+			"email": "john@test.com",
+			"isactive" :true
+		},
+		{
+			"id": 101,
+			"name": "Mark Wood",
+			"code": "mawo",
+			"phone": "222222",
+			"email": "mark@test.com",
+			"isactive" :true
+		}
+	]
+}

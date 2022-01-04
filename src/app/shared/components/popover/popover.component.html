@@ -1,0 +1,45 @@
+<div class="container">
+
+    <button mat-raised-button color="primary" [mdePopoverTriggerFor]="appPopover" mdePopoverTriggerOn="click">
+        Show Popover
+    </button>
+
+    <mde-popover #appPopover="mdePopover" [mdePopoverOverlapTrigger]="false" [mdePopoverCloseOnClick]="false">
+        <mat-card style="max-width: 300px">              
+            <ng-container *ngFor="let items of popoverDescription; let i=index">   
+                <!-- Mat card content  -->
+                <mat-card-content *ngIf = "items.type === 'content' && items.isFlagEnabled === true ">
+                    {{items.name}}
+                </mat-card-content>
+                <!-- Radio buttons  -->
+                <label id="example-radio-group-label" *ngIf = "((items.type === 'radio' || items.type === 'checkbox') && (items.isFlagEnabled === true))"> {{items.name}}</label><br>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" *ngIf = "items.type === 'radio' && items.isFlagEnabled === true ">
+                    <mat-radio-button class="example-radio-button" *ngFor="let data of items.data" [value]="data"
+                        (change)="radioChange($event,items)">
+                        {{data}}</mat-radio-button>
+                </mat-radio-group>
+              <!-- Checkbox  -->
+              <section class="example-section" *ngIf = "items.type === 'checkbox' && items.isFlagEnabled === true ">
+                <mat-checkbox class="example-margin" *ngFor="let data of items.data; let i = index" (change)="onChange($event,data,index)">
+                    {{data}}
+                </mat-checkbox>         
+              </section>
+            </ng-container>
+       
+            <mat-card-actions align="right">
+                <button (click)="closePopover()" mat-button>Close</button>
+                <button (click)="onSubmit()" mat-button>Submit</button>
+            </mat-card-actions>
+
+        </mat-card>
+    </mde-popover>  
+</div>
+
+<br>
+<br>
+<!-- Selected value of radio button  -->
+<div *ngIf = "isSubmitted === true && selectedValue != '' ">
+    <h2>Selected Array</h2>
+    {{finalArray | json }}
+    <h1> Selected value is - {{selectedValue}}</h1>
+</div>

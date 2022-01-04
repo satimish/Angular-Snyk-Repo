@@ -1,0 +1,98 @@
+<!-- content div -->
+<div id="contentDiv">
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <mat-toolbar>
+                    <button mat-icon-button>
+                        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+                    </button>
+                    Welcome to reusable component application
+                </mat-toolbar>
+
+                <mat-sidenav-container>
+                    
+                    <mat-sidenav class="mat-elevation-z8" mode="side" opened="true">
+                        <mat-card><mat-card-title>Components</mat-card-title></mat-card>
+                    <mat-divider></mat-divider>
+                        <button mat-button class="menu-button" [class.active]="selectedTab === enumTabs.Home"  routerLink="/home">
+                            <mat-icon>home</mat-icon>
+                            <span>{{enumTabs.Home}}</span>
+                        </button>
+
+                        <button mat-button class="menu-button" [class.active]="selectedTab === enumTabs.Tooltip" (click)="changeTab(enumTabs.Tooltip)">
+                            <mat-icon >info_outline</mat-icon>
+                            <span>{{enumTabs.Tooltip}}</span>
+                        </button>
+                        <button mat-button class="menu-button" [class.active]="selectedTab === enumTabs.Search" (click)="changeTab(enumTabs.Search)">
+                            <mat-icon>search</mat-icon>
+                            <span>{{enumTabs.Search}}</span>
+                        </button>
+                        <button mat-button class="menu-button" [class.active]="selectedTab === enumTabs.Popover" (click)="changeTab(enumTabs.Popover)">
+                            <mat-icon>info</mat-icon>
+                            <span>{{enumTabs.Popover}}</span>
+                        </button>
+
+                        <button mat-button class="menu-button" [class.active]="selectedTab === enumTabs.Grid" (click)="changeTab(enumTabs.Grid)">
+                            <mat-icon>table</mat-icon>
+                            <span>{{enumTabs.Grid}}</span>
+                        </button>
+
+                        <button mat-button class="menu-button" [class.active]="selectedTab === enumTabs.Form" (click)="changeTab(enumTabs.Form)">
+                            <mat-icon>receipt</mat-icon>
+                            <span>{{enumTabs.Form}}</span>
+                        </button>
+
+
+                        <mat-divider></mat-divider>
+
+                        <button mat-button class="menu-button" (click)="sidenav.toggle()">
+                            <mat-icon>close</mat-icon>
+                            <span>Close</span>
+                        </button>
+
+                    </mat-sidenav>
+
+                    <mat-sidenav-content>
+                        <div class="content mat-elevation-z8">
+                            <div *ngIf="selectedTab == enumTabs.Home">
+                                <!-- <app-home></app-home> -->
+                            </div>
+                            <div *ngIf="selectedTab == enumTabs.Tooltip">
+                                <span >
+                                    Put pointer on icon to see tooltip
+                                    <mat-icon placement="right"
+                                        [ngbTooltip]="tooltipContent"
+                                        tooltipClass="infoTooltipContent"
+                                        (mouseenter)="showTooltip()">info_outline</mat-icon>
+                                </span>
+                                <ng-template #tooltipContent>
+                                    <app-tooltip [tooltipMsg]="tooltipMsg"></app-tooltip>
+                                </ng-template>                               
+                            </div>
+                            <div *ngIf="selectedTab == enumTabs.Search">
+                                <app-search></app-search>
+                            </div>   
+                            <div *ngIf="selectedTab == enumTabs.Popover">
+                                <div #appPopover>
+                                    <app-popover [popoverDescription]="popoverDescription"></app-popover>
+                                </div>
+                            </div>
+                            <div *ngIf="selectedTab == enumTabs.Grid">
+                                <app-grid></app-grid>
+                            </div>   
+                            <div *ngIf="selectedTab == enumTabs.Form">
+                               <app-reactive-form></app-reactive-form>
+                            </div>                        
+                            <div *ngIf="!(selectedTab)">
+                                <span style="margin-left: 50px;padding-top:50px;">
+                                Main content will display here!
+                            </span>
+                            </div>
+                        </div>
+                    </mat-sidenav-content>
+                </mat-sidenav-container>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="search-container">
+    <span *ngIf="searchNotFound" class="mat-hint1">Not found</span>
+    <input class="input-field" [ngClass]="{'searh-input-err': searchNotFound === true}" *ngIf="isSearchBoxFilled"
+      [@inOutAnimation] id="txtSearch" #txtSearch type="search" maxlength="17"
+      placeholder="Search" autocomplete="off"
+      (keydown.enter)="searchGrid($event.target.value)" matInput>
+
+    <button *ngIf="!hideSearchCrossIcon" mat-button matSuffix mat-icon-button aria-label="Clear"
+      (click)="searchGrid('')" (dblclick)="searchGrid('')">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <span class="icon" id="searchIcon" *ngIf="hideSearchCrossIcon"
+            (click)="toggleSearchBox()">
+            <mat-icon class="search-icon">search</mat-icon>
+          </span>      
+  </div>
+
+  <h3><b>Entered text is : </b> {{searchText}}</h3>

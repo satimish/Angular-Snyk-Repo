@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44.66" height="44.66" viewBox="0 0 44.66 44.66">
+  <g id="Group_773" data-name="Group 773" transform="translate(-343 -317.744)">
+    <circle id="Ellipse_7" data-name="Ellipse 7" cx="22.33" cy="22.33" r="22.33" transform="translate(343 317.744)" fill="#ef5273"/>
+    <g id="Sign_1_" transform="translate(351.178 324.489)">
+      <text id="_" data-name="!" transform="translate(13.884 20.203)" fill="#fcfafa" font-size="15" font-family="AvenirLTStd-Black, Avenir LT Std" font-weight="800"><tspan x="-3.33" y="0">!</tspan></text>
+      <path id="Path_45" data-name="Path 45" d="M257.45,40.419,251.5,30.14l-5.947-10.279a1.8,1.8,0,0,0-3.157,0L236.452,30.14,230.5,40.419a1.79,1.79,0,0,0,1.615,2.717h23.789A1.844,1.844,0,0,0,257.45,40.419Z" transform="translate(-230.241 -18.925)" fill="none" stroke="#fffdfd" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

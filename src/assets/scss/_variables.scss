@@ -1,0 +1,49 @@
+// primary font
+$primary-font: 'Avenir LT Std 85 Heavy'!important; 
+$secondary-font: 'Avenir LT Std 65 Medium'!important; 
+$footer-font:'Avenir LT Std 45 Book'!important; 
+$secondary-font: 'Avenir LT Std 65 Medium'!important; 
+$grid-header-font: 'Avenir LT Std 95 Black'!important; 
+// font-weight
+$thin:100;
+$light:300;
+$regular:400;
+$bold:700;
+
+
+// Font size
+$primary-fs: 12px;
+$font-xs:14px;
+$font-sm: 16px;
+$font-md: 18px;
+$font-lg: 20px;
+
+// Color system
+
+$white: #fff !default;
+$gray-100: #F7F7F7 !default;
+$gray-200: #D9DCE3 !default;
+$gray-300: #00000029 !default;
+$gray-400:#C7C7C7 !default;
+$gray-500: #9E9E9E !default;
+$black: #000 !default;
+
+$blue: #0D009F !default;
+$gray: #707070 !default;
+$dark-blue:#031243 !default;
+
+$red: #C92742 !default;
+$green: #49A57B !default;
+$amber:#FECB00!default;
+
+$primary: $blue !default;
+$secondary:$gray !default;
+$success:$green !default;
+$warning:$red !default;
+
+
+//rem-calc() function in utilities
+@function rem-calc($size) {
+  $remSize: $size / 20px;
+  @return #{$remSize}rem;
+}

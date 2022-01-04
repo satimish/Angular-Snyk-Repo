@@ -1,0 +1,46 @@
+
+@import "../../../../assets/scss/variables";
+.search-container {
+    // border:none; position: absolute; top:11px; 
+    // left:280px; z-index: 1000;
+  
+    input {border-radius: 5px;height: 34px; width: 280px;
+      font-size: 17px;font-family:$secondary-font;
+     // font-size: 17px;font-family:$secondary-font;}
+  
+      
+  
+    button {border: none;position: absolute;right:0px;
+      background: transparent;top: -4px;color: #808080;}
+    span {border: none;position: absolute;right: -6px;
+      background: transparent;top: -5px;color: #808080;}  
+  
+      .search-icon{
+        position: relative;
+        top: -2px;
+        height: 20px;
+      
+         }
+  
+  }
+  
+  .icon {
+    background: white;
+    color: black;
+    // border: 1px solid grey;
+    border-left: none;
+    text-align: center;
+    /* margin-top: 1px; */
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .input-field {
+    /* padding: 10px; */
+    outline: none;
+  }
+  
+  .searh-input-err {
+    border: 1px solid #C92742 !important;
+  }
+}

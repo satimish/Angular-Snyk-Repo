@@ -1,0 +1,91 @@
+<div class="col-md-12 mt-5">
+    <span class="show-result" *ngIf="totalCount>0">Showing <span>{{displayCount}}</span> of <span>{{totalCount}}</span>
+        results</span>
+    <div class="data-dashboard">
+
+        <!-- Detailed Grid Section Start-->
+        <div class="pl-0 pr-0">
+            <mat-table class="search-grid-component" #table id="dataTable" [dataSource]="dataSource"
+                (scroll)="onTableScroll($event)" style="max-height: 350px;overflow: auto;">
+
+                <!-- Column-->
+                <ng-container matColumnDef="column1">
+                    <mat-header-cell *matHeaderCellDef>
+                        <span (click)="sortHeaderClick('column1')"
+                            [ngClass]="{ 'sorting d-time': isSorting('column1'), 'sorting_asc d-time1': isSortAsc('column1'), 'sorting_desc d-time2': isSortDesc('column1') }">
+                            Column 1 </span>
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.column1}} </mat-cell>
+                </ng-container>
+
+                <!-- Column-->
+                <ng-container matColumnDef="column2">
+                    <mat-header-cell *matHeaderCellDef>
+                        <span (click)="sortHeaderClick('column2')"
+                            [ngClass]="{ 'sorting d-time': isSorting('column2'), 'sorting_asc d-time1': isSortAsc('column2'), 'sorting_desc d-time2': isSortDesc('column2') }">
+                            Column 2 </span>
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.column2}} </mat-cell>
+                </ng-container>
+
+                <!-- Column-->
+                <ng-container matColumnDef="column3">
+                    <mat-header-cell *matHeaderCellDef>
+                            Column 3 
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.column3}} </mat-cell>
+                </ng-container>
+
+                <!-- Column-->
+                <ng-container matColumnDef="column4">
+                    <mat-header-cell *matHeaderCellDef>
+                        <span (click)="sortHeaderClick('column4')"
+                            [ngClass]="{ 'sorting d-time': isSorting('column4'), 'sorting_asc d-time1': isSortAsc('column4'), 'sorting_desc d-time2': isSortDesc('column4') }">
+                            Column 4 </span>
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.column4}} </mat-cell>
+                </ng-container>                
+
+                <!-- Column-->
+                <ng-container matColumnDef="column5">
+                    <mat-header-cell *matHeaderCellDef>
+                        <span (click)="sortHeaderClick('column5')"
+                            [ngClass]="{ 'sorting d-time': isSorting('column5'), 'sorting_asc d-time1': isSortAsc('column5'), 'sorting_desc d-time2': isSortDesc('column5') }">
+                            Column 5 </span>
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.column5}} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: columnsToDisplay;"
+                    [ngClass]="{'row-active': (selectedGroup?.column1 === row.column1), 'hand-symbol':true}"
+                    [class.selected]="selectedGroup === selectedGroup" (click)="onSelect(row)">
+                </mat-row>
+
+            </mat-table>
+        </div>
+
+        <div class="text-center" *ngIf="isInProgress">
+            <!-- loader start-->
+            <div class="grey-loader" >
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <!-- loader end-->
+          </div>
+
+
+
+    </div>
+
+</div>

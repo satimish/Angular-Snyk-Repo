@@ -1,0 +1,60 @@
+
+<div class="col-md-12" style="margin-top: 20px;">
+    <div class="col-md-12">
+        <h1>{{labelText}} Empolyee</h1>
+    </div>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+        <div class="col-md-12">
+            <mat-form-field appearance="standard">
+                <mat-label>Code<span style="color:red">*</span></mat-label>
+                <input matInput placeholder="First Name" formControlName="code">
+                <mat-hint
+                    *ngIf="myForm.get('code').invalid && (myForm.get('code').dirty || myForm.get('code').touched)">
+                    Min length 3, max length 5
+                </mat-hint>
+                <mat-error *ngIf="myForm.get('code').hasError('required')">First name is required</mat-error>
+                <mat-error *ngIf="myForm.get('code').hasError('minLength')">Min length 3</mat-error>
+                <mat-error *ngIf="myForm.get('code').hasError('maxLength')">Max length 5</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-md-12">
+            <mat-form-field appearance="standard">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Name" formControlName="name">
+            </mat-form-field>
+        </div>
+        <div class="col-md-12">
+            <mat-form-field appearance="standard">
+                <mat-label>Phone</mat-label>
+                <input matInput placeholder="Phone" formControlName="phone">
+            </mat-form-field>
+        </div>
+        <div class="col-md-12">
+            <mat-form-field appearance="standard">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" formControlName="email">
+            </mat-form-field>
+            <mat-error *ngIf="myForm.get('email').hasError('email')">
+                Invalid email
+            </mat-error>
+        </div>
+        <!-- <div class="col-md-12">
+            <label >Active</label>
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                formControlName="isactive">
+                <mat-radio-button class="example-radio-button" style="margin-left: 5px;" *ngFor="let gender of genders"
+                    [value]="gender">
+                    {{gender | titlecase}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div> -->
+      
+       
+
+        <br>
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
+        </div>
+    </form>
+</div>
